@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Captcha</title>
+  <style>
+    img {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Captcha Value</h1>
+  <div class="imgDiv">
+    <img src="<%= imageUrl %>">
+  </div>
+  <input id="CaptchaText" type="text" placeholder="Enter value">
+  <button onClick="checkValue()">Submit</button>
+  <script>
+    function checkValue() {
+      let text = '<%=captchaValue %>'
+      if (text == document.getElementById('CaptchaText').value) {
+        alert("Matched")
+        location.reload()
+      } else {
+        location.reload();
+      }
+    }
+
+  </script>
+</body>
+
+</html>
